@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors - Play Now!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .choice-btn {
+        transition: all 0.3s ease;
+      }
+
+      .choice-btn:hover {
+        transform: translateY(-10px) scale(1.1);
+      }
+
+      .choice-btn:active {
+        transform: translateY(-5px) scale(1.05);
+      }
+
+      .pulse-animation {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      .slide-in {
+        animation: slideIn 0.5s ease-out;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .bounce-in {
+        animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+
+      @keyframes bounceIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.3);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      .win-gradient {
+        background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      }
+
+      .lose-gradient {
+        background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+      }
+
+      .draw-gradient {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      }
+    </style>
+  </head>
+  <body class="gradient-bg min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-4xl">
+      <!-- Header with Score -->
+      <div class="text-center mb-8 slide-in">
+        <h1
+          class="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-lg"
+        >
+          🎮 Rock Paper Scissors
+        </h1>
+
+        <!-- Score Board -->
+        <div
+          class="bg-white/20 backdrop-blur-lg rounded-2xl p-6 mb-6 shadow-2xl"
+        >
+          <div class="grid grid-cols-2 gap-6 max-w-md mx-auto">
+            <div
+              class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-4 shadow-lg transform hover:scale-105 transition"
+            >
+              <p class="text-white/80 text-sm font-semibold mb-1">YOU</p>
+              <p id="player-score" class="text-4xl font-black text-white">0</p>
+            </div>
+            <div
+              class="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-4 shadow-lg transform hover:scale-105 transition"
+            >
+              <p class="text-white/80 text-sm font-semibold mb-1">COMPUTER</p>
+              <p id="computer-score" class="text-4xl font-black text-white">
+                0
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Restart Button -->
+        <button
+          id="restart"
+          class="hidden bg-white text-purple-600 px-8 py-3 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300"
+        >
+          🔄 New Game
+        </button>
+      </div>
+
+      <!-- Game Area -->
+      <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl">
+        <h2 class="text-3xl font-bold text-white text-center mb-8">
+          Choose Your Weapon!
+        </h2>
+
+        <!-- Choices -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Rock -->
+          <button
+            id="rock"
+            class="choice-btn bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl flex flex-col items-center justify-center space-y-4 cursor-pointer"
+          >
+            <i class="fas fa-hand-rock text-7xl text-red-500"></i>
+            <span class="text-2xl font-bold text-gray-800">Rock</span>
+          </button>
+
+          <!-- Paper -->
+          <button
+            id="paper"
+            class="choice-btn bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl flex flex-col items-center justify-center space-y-4 cursor-pointer"
+          >
+            <i class="fas fa-hand-paper text-7xl text-blue-500"></i>
+            <span class="text-2xl font-bold text-gray-800">Paper</span>
+          </button>
+
+          <!-- Scissors -->
+          <button
+            id="scissors"
+            class="choice-btn bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl flex flex-col items-center justify-center space-y-4 cursor-pointer"
+          >
+            <i class="fas fa-hand-scissors text-7xl text-yellow-500"></i>
+            <span class="text-2xl font-bold text-gray-800">Scissors</span>
+          </button>
+        </div>
+
+        <!-- Game Status -->
+        <div
+          id="game-status"
+          class="mt-8 text-center text-white text-xl font-semibold hidden"
+        >
+          <p class="animate-pulse">⏳ Computer is thinking...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      id="modal"
+      class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50"
+    >
+      <div
+        id="result"
+        class="bg-white rounded-3xl p-8 md:p-12 max-w-md w-full shadow-2xl bounce-in text-center"
+      >
+        <!-- Result content will be inserted here -->
+      </div>
+    </div>
+
+    <script src="eraa.js"></script>
+  </body>
+</html>
