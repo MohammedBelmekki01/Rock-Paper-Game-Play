@@ -6,22 +6,22 @@ A modern, visually stunning Rock Paper Scissors game built with vanilla JavaScri
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-## ✨ Features
+##  Features
 
-- 🎨 **Modern UI Design** - Beautiful gradient backgrounds with glassmorphism effects
-- 🎭 **Smooth Animations** - Hover effects, transitions, and bounce animations
-- 📊 **Live Score Tracking** - Real-time scoreboard for player vs computer
-- 🎯 **Interactive Gameplay** - Large, clickable buttons with visual feedback
-- 📱 **Fully Responsive** - Works seamlessly on desktop, tablet, and mobile devices
-- ⏳ **Dramatic Effects** - Computer "thinking" animation before revealing choice
-- 🎪 **Visual Results** - Animated modal showing both choices side-by-side
-- 🔄 **Easy Restart** - Quick reset button to start a new game
+-  **Modern UI Design** - Beautiful gradient backgrounds with glassmorphism effects
+-  **Smooth Animations** - Hover effects, transitions, and bounce animations
+-  **Live Score Tracking** - Real-time scoreboard for player vs computer
+-  **Interactive Gameplay** - Large, clickable buttons with visual feedback
+-  **Fully Responsive** - Works seamlessly on desktop, tablet, and mobile devices
+-  **Dramatic Effects** - Computer "thinking" animation before revealing choice
+-  **Visual Results** - Animated modal showing both choices side-by-side
+-  **Easy Restart** - Quick reset button to start a new game
 
-## 🚀 Demo
+##  Demo
 
 Simply open `index.html` in your web browser to start playing!
 
-## 🎮 How to Play
+##  How to Play
 
 1. **Choose Your Weapon** - Click on Rock, Paper, or Scissors
 2. **Wait for Computer** - The computer makes its choice
@@ -32,10 +32,10 @@ Simply open `index.html` in your web browser to start playing!
 ### Game Rules
 
 - 🪨 Rock beats Scissors
-- 📄 Paper beats Rock
-- ✂️ Scissors beats Paper
+-  Paper beats Rock
+-  Scissors beats Paper
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - **HTML5** - Semantic markup structure
 - **Tailwind CSS** - Utility-first CSS framework via CDN
@@ -43,7 +43,7 @@ Simply open `index.html` in your web browser to start playing!
 - **Font Awesome 6** - Icon library for hand gestures
 - **Google Fonts** - Poppins font family
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 rock-paper-game/
@@ -56,14 +56,14 @@ rock-paper-game/
 └── README.md          # Project documentation
 ```
 
-## 🎨 Design Highlights
+##  Design Highlights
 
 ### Color Scheme
 
 - **Primary Gradient**: Purple to violet (`#667eea` → `#764ba2`)
-- **Win State**: Green gradient with celebration emoji 🎉
-- **Lose State**: Red gradient with sad emoji 😢
-- **Draw State**: Blue gradient with handshake emoji 🤝
+- **Win State**: Green gradient with celebration emoji 
+- **Lose State**: Red gradient with sad emoji 
+- **Draw State**: Blue gradient with handshake emoji 
 
 ### Visual Effects
 
@@ -73,7 +73,7 @@ rock-paper-game/
 - Smooth color transitions
 - Shadow and glow effects
 
-## 💻 Installation & Setup
+##  Installation & Setup
 
 1. **Clone or Download** the repository
 
@@ -101,27 +101,27 @@ rock-paper-game/
      npx http-server
      ```
 
-4. **Start Playing!** 🎮
+4. **Start Playing!** 
 
-## 🌐 Browser Compatibility
+##  Browser Compatibility
 
 Works on all modern browsers:
 
-- ✅ Chrome (recommended)
-- ✅ Firefox
-- ✅ Safari
-- ✅ Edge
-- ✅ Opera
+-  Chrome (recommended)
+-  Firefox
+-  Safari
+-  Edge
+-  Opera
 
-## 📱 Responsive Design
+##  Responsive Design
 
 The game adapts beautifully to different screen sizes:
 
-- 📱 **Mobile**: Single column layout, optimized touch targets
-- 📱 **Tablet**: Responsive grid, comfortable spacing
-- 💻 **Desktop**: Full three-column layout with hover effects
+-  **Mobile**: Single column layout, optimized touch targets
+-  **Tablet**: Responsive grid, comfortable spacing
+-  **Desktop**: Full three-column layout with hover effects
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 Potential features for future versions:
 
@@ -134,18 +134,15 @@ Potential features for future versions:
 - [ ] Different themes and color schemes
 - [ ] Lizard and Spock mode (Big Bang Theory variant)
 
-## 🤝 Contributing
+##  Contributing
 
 Feel free to fork this project and submit pull requests with improvements!
 
-## 📄 License
+##  License
 
 This project is open source and available for personal and educational use.
 
-## 👨‍💻 Author
-
-Created with ❤️ as a fun web development project
-
----
+##  Author
+Mohammed belmekki 
 
 **Enjoy the game! May the best hand win!** 🏆✨
